@@ -7,12 +7,80 @@
 
 /* TODO(ch2-T3): .container — rộng tối đa --container-max, căn giữa (margin-inline: auto),
    padding-inline --space-4, từ 40rem tăng lên --space-6 */
+.container {
+   inline-size: 100%;
+   max-inline-size: var(--container-max);
+   margin-inline: auto;
+   padding-inline: var(--space-4);
+
+   @media (width >=40rem) {
+      padding-inline: var(--space-6);
+   }
+}
 
 /* TODO(ch2-T3): .site-header nền --color-header-bg; từ 40rem: position: sticky; top 0.
    .site-header__inner và .site-nav__list dùng Flexbox (flex-wrap: wrap, gap, align-items: center,
    justify-content: space-between); bỏ dấu chấm của list */
 
+/* ---- Header: Flexbox xếp logo và menu ---- */
+.site-header {
+   z-index: 10;
+   background-color: var(--color-header-bg);
+   color: var(--color-header-text);
+   box-shadow: var(--shadow-md);
+
+   @media (width >=40rem) {
+      position: sticky;
+      inset-block-start: 0;
+   }
+}
+
+.site-header__inner {
+   display: flex;
+   flex-wrap: wrap;
+   align-items: center;
+   justify-content: space-between;
+   gap: var(--space-2) var(--space-4);
+   padding-block: var(--space-3);
+}
+
+.site-nav__list {
+   display: flex;
+   flex-wrap: wrap;
+   gap: var(--space-1);
+   padding: 0;
+   list-style: none;
+}
+
 /* TODO(ch2-T3): .site-footer nền tối, chữ nhỏ; .site-footer__inner cột dọc, từ 64rem thành hàng ngang */
+.site-footer {
+   margin-block-start: var(--space-16);
+   padding-block: var(--space-8);
+   background-color: var(--color-header-bg);
+   color: #c9d6ea;
+   font-size: var(--text-sm);
+
+   & a {
+      color: var(--palette-cyan-500);
+   }
+
+   & small {
+      color: inherit;
+      opacity: 0.8;
+   }
+}
+
+.site-footer__inner {
+   display: flex;
+   flex-direction: column;
+   gap: var(--space-2);
+
+   @media (width >=64rem) {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+   }
+}
 
 /* TODO(ch2-T3): .page (padding trên dưới), .page--narrow (hẹp lại cho form), .page__intro (tối đa 60ch),
    .section, .section__head (Flexbox: tiêu đề trái, link "Xem tất cả" phải) */
