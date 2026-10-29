@@ -82,17 +82,123 @@
    }
 }
 
-/* TODO(ch2-T3): .page (padding trên dưới), .page--narrow (hẹp lại cho form), .page__intro (tối đa 60ch),
-   .section, .section__head (Flexbox: tiêu đề trái, link "Xem tất cả" phải) */
+/* TODO(ch2-T3): .page (padding trên dưới), .page--narrow (hẹp lại cho form),
+ .page__intro (tối đa 60ch),
+.section, .section__head (Flexbox: tiêu đề trái, link "Xem tất cả" phải) */
+
+.page {
+   padding-block: var(--space-8);
+}
+
+.page--narrow {
+   max-inline-size: var(--container-narrow);
+}
+
+.page__intro {
+   margin-block: var(--space-3) var(--space-8);
+   max-inline-size: 60ch;
+   color: var(--color-text-muted);
+   font-size: var(--text-lg);
+}
+
+.section {
+   padding-block: var(--space-12) 0;
+}
 
 /* TODO(ch2-T3): .hero — Grid 1 cột, nền gradient từ primary tới màu tối, chữ trắng, bo góc lớn;
    từ 64rem: grid-template-columns 2 cột */
+.section__head {
+   display: flex;
+   flex-wrap: wrap;
+   align-items: baseline;
+   justify-content: space-between;
+   gap: var(--space-2) var(--space-4);
+   margin-block-end: var(--space-6);
+}
 
 /* TODO(ch2-T4): .card-grid — display: grid;
    grid-template-columns: repeat(auto-fit, minmax(min(16rem, 100%), 1fr)); gap; bỏ list-style.
    KHÔNG dùng media query cho lưới này. */
+.card-grid {
+   display: grid;
+   grid-template-columns: repeat(auto-fit,
+         minmax(min(16rem, 100%), 1fr));
+   gap: var(--space-6);
+   padding: 0;
+   list-style: none;
+}
 
 /* TODO(ch2-T5): .detail — Grid 1 cột; từ 64rem: 2 cột (2fr và 1fr) với grid-template-areas
      "head head" "media info" "content info" "prep info" "foot foot".
    Gán grid-area cho .detail__head/__media/__info/__content/__prep/__foot CHỈ BÊN TRONG media query.
    .detail__info: align-self: start; position: sticky; top chừa chỗ cho header */
+
+.hero {
+   display: grid;
+   gap: var(--space-6);
+   align-items: center;
+   /* Hero tự đặt padding nên phải tự chừa lề ngoài bằng đúng lề của .container */
+   inline-size: calc(100% - 2 * var(--space-4));
+   max-inline-size: calc(var(--container-max) - 2 * var(--space-6));
+   margin-block-start: var(--space-6);
+   padding: var(--space-8) var(--space-6);
+
+   @media (width >=40rem) {
+      inline-size: calc(100% - 2 * var(--space-6));
+   }
+
+   border-radius: var(--radius-lg);
+   background: radial-gradient(circle at 100% 0%, rgb(0 196 204 / 0.35), transparent 45%),
+   linear-gradient(135deg, var(--palette-blue-700), var(--palette-blue-900));
+   color: var(--palette-white);
+
+   @media (width >=64rem) {
+      grid-template-columns: 1.1fr 1fr;
+      padding: var(--space-12);
+   }
+}
+
+.detail {
+   display: grid;
+   gap: var(--space-6);
+
+   @media (width >=64rem) {
+      grid-template-columns: mimax (0, 2fr) mimax(18rem, 1fr);
+      grid-template-areas:
+         "head head"
+         "media info"
+         "content info"
+         "prep info"
+         "foot foot";
+      column-gap: var(--space-8);
+   }
+}
+
+@media (width >=64rem) {
+   .detail__head {
+      grid-area: head;
+   }
+
+   .detail__media {
+      grid-area: media;
+   }
+
+   .detail__content {
+      grid-area: content;
+   }
+
+   .detail__prep {
+      grid-area: prep;
+   }
+
+   .detail__foot {
+      grid-area: foot;
+   }
+
+   .detail__info {
+      grid-area: info;
+      align-self: start;
+      position: sticky;
+      inset-bock-start: 6rem;
+   }
+}
