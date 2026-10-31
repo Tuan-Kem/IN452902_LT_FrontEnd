@@ -18,3 +18,99 @@
 /* TODO(ch2-T2): :focus-visible — outline 3px màu --color-focus, outline-offset 2px */
 
 /* TODO(ch2-T2): @media (prefers-reduced-motion: reduce) — tắt animation/transition, scroll-behavior: auto */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:where(body, h1, h2, h3, p, ul, ol, dl, dd, figure, fieldset) {
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  min-block-size: 100vh;
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+:is(h1, h2, h3) {
+  line-height: var(--leading-tight);
+  font-weight: var(--weight-bold);
+  text-wrap: balance; 
+}
+
+h1 { font-size: var(--text-3xl); }
+h2 { font-size: var(--text-2xl); }
+h3 { font-size: var(--text-xl); }
+
+p { text-wrap: pretty; }
+
+img,
+svg {
+  display: block;
+  max-inline-size: 100%;
+  block-size: auto;
+}
+
+a {
+  color: var(--color-link);
+  text-underline-offset: 0.2em;
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+
+:where(input, button, select, textarea) {
+  font: inherit;
+  color: inherit;
+}
+
+abbr[title] {
+  text-decoration: none;
+  color: var(--color-danger);
+}
+
+small {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+
+:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
