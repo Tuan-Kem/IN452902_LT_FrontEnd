@@ -199,6 +199,6 @@
       grid-area: info;
       align-self: start;
       position: sticky;
-      inset-bock-start: 6rem;
+      inset-block-start: 6rem;
    }
 }
