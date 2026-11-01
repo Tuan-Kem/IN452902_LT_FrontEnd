@@ -7,3 +7,11 @@
    Sau đó @import 4 tệp vào đúng lớp của nó, ví dụ:
      @import url("tokens.css") layer(tokens);
    Lưu ý: @import phải đứng đầu tệp, chỉ dòng @layer được đứng trước. */
+
+
+@layer tokens, base, layout, components;
+
+@import url("tokens.css") layer(tokens);
+@import url("base.css") layer(base);
+@import url("layout.css") layer(layout);
+@import url("components.css") layer(components);
