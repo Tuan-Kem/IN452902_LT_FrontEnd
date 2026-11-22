@@ -25,13 +25,40 @@ async function request(path, { method = 'GET', body, signal } = {}) {
   // 3. !response.ok: đọc JSON ProblemDetails { title, detail, errors } rồi ném
   //    new ApiError(response.status, detail ?? title, errors).
   // 4. Thành công: trả response.json() (204 thì trả null).
-  throw new ApiError(0, `TODO(ch3-T2): chưa cài request() — ${method} ${API_URL}${path}`);
+  let response;
+    try {
+      response = await fetch(`${API_URL}${path}`, {
+        method,
+        signal,
+        headers: body ? { 'Content-Type': 'application/json' } : undefined,
+        body: body ? JSON.stringify(body) : undefined,
+      });
+    } catch (error) {
+      // Request bị huỷ bằng AbortController: ném lại nguyên trạng để nơi gọi bỏ qua
+      if (error.name === 'AbortError') throw error;
+      // fetch chỉ ném lỗi khi không tới được server (tắt mock API, mất mạng, bị chặn CORS)
+      throw new ApiError(0, 'Không kết nối được máy chủ. Kiểm tra mock API đã chạy (npm run api) chưa.');
+    }
+  
+    if (!response.ok) {
+      // Server trả lỗi dạng ProblemDetails: { title, status, detail, errors }
+      const problem = await response.json().catch(() => ({}));
+      throw new ApiError(response.status, problem.detail ?? problem.title ?? `Lỗi ${response.status}`, problem.errors);
+    }
+  
+    // 204 No Content: không có thân để đọc
+    return response.status === 204 ? null : response.json();
 }
 
 /** Bỏ các tham số rỗng để URL gọn: { q: '', clubId: 'x' } → "?clubId=x" */
 function toQueryString(params) {
   // TODO(ch3-T2): dùng URLSearchParams, bỏ giá trị undefined/null/'' ; không có tham số nào thì trả ''
-  return '';
+  const search = new URLSearchParams();
+  for (const [key, value] of Object.entries(params)) {
+    if (value !== undefined && value !== null && value !== '') search.set(key, value);
+  }
+  const text = search.toString();
+  return text ? `?${text}` : '';
 }
 
 /** GET /api/events → { items, totalCount, page, pageSize } */
