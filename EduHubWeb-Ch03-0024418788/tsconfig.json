@@ -1,0 +1,14 @@
+{
+  // Ch03 chỉ có MỘT tệp TypeScript (src/utils/format.ts) để làm quen.
+  // tsc chỉ kiểm lỗi kiểu (noEmit); Vite tự bỏ kiểu khi chạy và build.
+  "compilerOptions": {
+    "target": "es2023",
+    "lib": ["es2023", "dom"],
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "strict": true,
+    "noEmit": true,
+    "skipLibCheck": true
+  },
+  "include": ["src/**/*.ts"]
+}

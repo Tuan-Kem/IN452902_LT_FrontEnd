@@ -1,0 +1,105 @@
+/* ==========================================================================
+   base.css — đặt lại mặc định của trình duyệt + kiểu cho thẻ HTML trần
+   Chỉ dùng selector thẻ (h1, a, img...), chưa có class.
+   ========================================================================== */
+
+/* Tính width/height gồm cả padding và border → dễ đoán kích thước hơn */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* :where() có specificity = 0 → lớp sau ghi đè thoải mái */
+:where(body, h1, h2, h3, p, ul, ol, dl, dd, figure, fieldset) {
+  margin: 0;
+}
+
+html {
+  /* Cuộn mượt khi bấm link #neo, -webkit- cho Safari cũ để chữ không tự phóng to */
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  min-block-size: 100vh;
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  /* Sticky footer: body là cột flex, main giãn ra lấp chỗ trống */
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+:is(h1, h2, h3) {
+  line-height: var(--leading-tight);
+  font-weight: var(--weight-bold);
+  text-wrap: balance; /* chia dòng tiêu đề cho cân */
+}
+
+h1 { font-size: var(--text-3xl); }
+h2 { font-size: var(--text-2xl); }
+h3 { font-size: var(--text-xl); }
+
+p { text-wrap: pretty; }
+
+/* Ảnh không bao giờ tràn khung → tránh thanh cuộn ngang trên điện thoại */
+img,
+svg {
+  display: block;
+  max-inline-size: 100%;
+  block-size: auto;
+}
+
+a {
+  color: var(--color-link);
+  text-underline-offset: 0.2em;
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+/* Input, button mặc định không kế thừa font → ép kế thừa */
+:where(input, button, select, textarea) {
+  font: inherit;
+  color: inherit;
+}
+
+abbr[title] {
+  text-decoration: none;
+  color: var(--color-danger);
+}
+
+small {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+/* Vòng focus rõ ràng — chỉ hiện khi dùng bàn phím (:focus-visible) */
+:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+/* Người dùng bật "Giảm chuyển động" trong hệ điều hành → tắt animation/transition */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

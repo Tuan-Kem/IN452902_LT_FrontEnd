@@ -1,0 +1,180 @@
+/* ==========================================================================
+   layout.css — khung trang: container, header, footer, lưới nội dung
+   Mobile-first: phần không nằm trong @media là giao diện điện thoại.
+   Mốc: sm = 40rem (640px), lg = 64rem (1024px) — xem tokens.css.
+   ========================================================================== */
+
+/* ---- Container: giới hạn bề ngang, căn giữa, chừa lề hai bên ---- */
+.container {
+  inline-size: 100%;
+  max-inline-size: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--space-4);
+
+  @media (width >= 40rem) {
+    padding-inline: var(--space-6);
+  }
+}
+
+/* ---- Header: Flexbox xếp logo và menu ---- */
+.site-header {
+  z-index: 10;
+  background-color: var(--color-header-bg);
+  color: var(--color-header-text);
+  box-shadow: var(--shadow-md);
+
+  /* Từ sm: header dính đầu trang. Điện thoại màn hình thấp nên không dính */
+  @media (width >= 40rem) {
+    position: sticky;
+    inset-block-start: 0;
+  }
+}
+
+.site-header__inner {
+  display: flex;
+  flex-wrap: wrap;            /* điện thoại: menu rớt xuống dòng dưới logo */
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2) var(--space-4);
+  padding-block: var(--space-3);
+}
+
+.site-nav__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+  padding: 0;
+  list-style: none;
+}
+
+/* ---- Footer ---- */
+.site-footer {
+  margin-block-start: var(--space-16);
+  padding-block: var(--space-8);
+  background-color: var(--color-header-bg);
+  color: #c9d6ea;
+  font-size: var(--text-sm);
+
+  & a {
+    color: var(--palette-cyan-500);
+  }
+
+  & small {
+    color: inherit;
+    opacity: 0.8;
+  }
+}
+
+.site-footer__inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+
+  @media (width >= 64rem) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+
+/* ---- Vùng nội dung ---- */
+.page {
+  padding-block: var(--space-8);
+}
+
+.page--narrow {
+  max-inline-size: var(--container-narrow);
+}
+
+.page__intro {
+  margin-block: var(--space-3) var(--space-8);
+  max-inline-size: 60ch; /* dòng chữ không quá dài → dễ đọc */
+  color: var(--color-text-muted);
+  font-size: var(--text-lg);
+}
+
+.section {
+  padding-block: var(--space-12) 0;
+}
+
+.section__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-2) var(--space-4);
+  margin-block-end: var(--space-6);
+}
+
+/* ---- Lưới card: tự chia cột theo bề ngang, không cần media query ----
+   auto-fit + minmax(16rem, 1fr): mỗi cột rộng ít nhất 16rem,
+   còn chỗ thì thêm cột, thiếu chỗ thì rớt xuống hàng. min() chống tràn ở màn hình < 16rem. */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(16rem, 100%), 1fr));
+  gap: var(--space-6);
+  padding: 0;
+  list-style: none;
+}
+
+/* ---- Hero trang chủ: 1 cột → 2 cột ở lg ---- */
+.hero {
+  display: grid;
+  gap: var(--space-6);
+  align-items: center;
+  /* Hero tự đặt padding nên phải tự chừa lề ngoài bằng đúng lề của .container */
+  inline-size: calc(100% - 2 * var(--space-4));
+  max-inline-size: calc(var(--container-max) - 2 * var(--space-6));
+  margin-block-start: var(--space-6);
+  padding: var(--space-8) var(--space-6);
+
+  @media (width >= 40rem) {
+    inline-size: calc(100% - 2 * var(--space-6));
+  }
+
+  border-radius: var(--radius-lg);
+  background:
+    radial-gradient(circle at 100% 0%, rgb(0 196 204 / 0.35), transparent 45%),
+    linear-gradient(135deg, var(--palette-blue-700), var(--palette-blue-900));
+  color: var(--palette-white);
+
+  @media (width >= 64rem) {
+    grid-template-columns: 1.1fr 1fr;
+    padding: var(--space-12);
+  }
+}
+
+/* ---- Trang chi tiết: Grid template areas ----
+   Điện thoại: mọi khối xếp chồng theo thứ tự HTML.
+   lg: 2 cột, khối "info" là cột phải chạy dọc suốt nội dung. */
+.detail {
+  display: grid;
+  gap: var(--space-6);
+
+  @media (width >= 64rem) {
+    grid-template-columns: minmax(0, 2fr) minmax(18rem, 1fr);
+    grid-template-areas:
+      "head    head"
+      "media   info"
+      "content info"
+      "prep    info"
+      "foot    foot";
+    column-gap: var(--space-8);
+  }
+}
+
+/* Gán vùng chỉ trong @media: tên vùng không tồn tại ở 1 cột sẽ sinh ra cột ngầm thừa */
+@media (width >= 64rem) {
+  .detail__head    { grid-area: head; }
+  .detail__media   { grid-area: media; }
+  .detail__content { grid-area: content; }
+  .detail__prep    { grid-area: prep; }
+  .detail__foot    { grid-area: foot; }
+
+  .detail__info {
+    grid-area: info;
+    align-self: start;
+    position: sticky;            /* cột phải đứng yên khi cuộn nội dung */
+    inset-block-start: 6rem;     /* chừa chỗ cho header sticky */
+  }
+}

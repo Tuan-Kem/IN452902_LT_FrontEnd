@@ -1,0 +1,128 @@
+/* ==========================================================================
+   tokens.css — Design token của EduHub Web
+   Nguồn sự thật cho màu, chữ, khoảng cách, bo góc, đổ bóng.
+   Ch04 chép các giá trị này sang @theme của Tailwind (tên giữ nguyên ý nghĩa).
+   ========================================================================== */
+
+:root {
+  /* ---- 1. Bảng màu gốc (palette) — chỉ dùng để định nghĩa token ngữ nghĩa ---- */
+  --palette-blue-900: #001d45;   /* tối */
+  --palette-blue-700: #003f87;   /* chính */
+  --palette-blue-300: #7fb2ff;
+  --palette-blue-50: #f0f7ff;    /* nền */
+  --palette-cyan-500: #00c4cc;   /* nhấn */
+  --palette-cyan-700: #007a80;
+  --palette-ink: #1a1a2e;        /* chữ */
+  --palette-white: #ffffff;
+  --palette-orange-600: #c2410c;
+  --palette-orange-100: #ffedd5;
+  --palette-red-600: #dc2626;
+  --palette-green-700: #15803d;
+
+  /* ---- 2. Màu theo vai trò (semantic) — component ưu tiên dùng nhóm này ---- */
+  --color-primary: var(--palette-blue-700);
+  --color-primary-hover: var(--palette-blue-900);
+  --color-on-primary: var(--palette-white);   /* chữ đặt trên nền primary */
+  --color-accent: var(--palette-cyan-500);
+  --color-accent-strong: var(--palette-cyan-700);
+  --color-bg: var(--palette-blue-50);
+  --color-surface: var(--palette-white);      /* nền card, form */
+  --color-surface-muted: #e3eefc;
+  --color-text: var(--palette-ink);
+  --color-text-muted: #4a5468;
+  --color-border: #cbd9ec;
+  --color-link: var(--palette-blue-700);
+  --color-focus: var(--palette-cyan-500);
+  --color-warning: var(--palette-orange-600);
+  --color-warning-bg: var(--palette-orange-100);
+  --color-danger: var(--palette-red-600);
+  --color-success: var(--palette-green-700);
+  --color-header-bg: var(--palette-blue-900);
+  --color-header-text: var(--palette-white);
+
+  /* ---- 3. Chữ ---- */
+  /* Không tải font ngoài: dùng Be Vietnam Pro nếu máy đã cài, không thì font hệ thống */
+  --font-sans: "Be Vietnam Pro", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  /* clamp(nhỏ nhất, co giãn theo màn hình, lớn nhất) — chữ to dần khi màn hình rộng */
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: clamp(1.25rem, 1.1rem + 0.6vw, 1.5rem);
+  --text-2xl: clamp(1.5rem, 1.2rem + 1.2vw, 2rem);
+  --text-3xl: clamp(1.875rem, 1.3rem + 2.4vw, 3rem);
+
+  --leading-tight: 1.25;
+  --leading-normal: 1.6;
+  --weight-normal: 400;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+
+  /* ---- 4. Khoảng cách (thang 4px, đơn vị rem để tôn trọng cỡ chữ người dùng) ---- */
+  --space-1: 0.25rem;  /* 4px */
+  --space-2: 0.5rem;   /* 8px */
+  --space-3: 0.75rem;  /* 12px */
+  --space-4: 1rem;     /* 16px */
+  --space-6: 1.5rem;   /* 24px */
+  --space-8: 2rem;     /* 32px */
+  --space-12: 3rem;    /* 48px */
+  --space-16: 4rem;    /* 64px */
+
+  /* ---- 5. Bo góc ---- */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1.25rem;
+  --radius-full: 999px;
+
+  /* ---- 6. Đổ bóng ---- */
+  --shadow-sm: 0 1px 2px rgb(0 29 69 / 0.08);
+  --shadow-md: 0 4px 12px rgb(0 29 69 / 0.1);
+  --shadow-lg: 0 12px 28px rgb(0 29 69 / 0.16);
+
+  /* ---- 7. Bố cục và chuyển động ---- */
+  --container-max: 72rem;        /* 1152px */
+  --container-narrow: 44rem;
+  --duration-fast: 150ms;
+  --duration-normal: 250ms;
+  --ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
+
+  /* ---- 8. Breakpoint (GHI CHÚ) ----
+     CSS chưa cho dùng var() trong @media, nên giá trị dưới đây chỉ để tra cứu.
+     Mobile-first: viết cho điện thoại trước, rồi mở rộng bằng
+       @media (width >= 40rem)  → sm, máy tính bảng (640px)
+       @media (width >= 64rem)  → lg, máy tính      (1024px)
+     Tailwind v4 ở Ch04 dùng đúng hai mốc này: --breakpoint-sm / --breakpoint-lg. */
+  --breakpoint-sm: 40rem;
+  --breakpoint-lg: 64rem;
+
+  /* Cho trình duyệt biết trang hỗ trợ cả hai chế độ (thanh cuộn, ô input đổi màu theo) */
+  color-scheme: light dark;
+}
+
+/* ---- Dark mode: chỉ đổi token ngữ nghĩa, component không cần sửa gì ---- */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-primary: var(--palette-blue-300);
+    --color-primary-hover: #a9cbff;
+    --color-on-primary: var(--palette-blue-900);
+    --color-accent-strong: var(--palette-cyan-500);
+    --color-bg: #000f26;
+    --color-surface: var(--palette-blue-900);
+    --color-surface-muted: #0a2a57;
+    --color-text: #e6eef8;
+    --color-text-muted: #a8b6cc;
+    --color-border: #1f3d66;
+    --color-link: var(--palette-blue-300);
+    --color-warning: #fdba74;
+    --color-warning-bg: #3b1d0a;
+    --color-danger: #f87171;
+    --color-success: #4ade80;
+    --color-header-bg: #000a1a;
+
+    --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.4);
+    --shadow-md: 0 4px 12px rgb(0 0 0 / 0.45);
+    --shadow-lg: 0 12px 28px rgb(0 0 0 / 0.55);
+  }
+}

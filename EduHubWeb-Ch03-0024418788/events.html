@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lịch sự kiện · EduHub Web</title>
+    <meta name="description" content="Lịch các sự kiện sắp tới của câu lạc bộ sinh viên Trường Đại học Đồng Tháp, học kỳ I năm học 2026–2027.">
+    <!-- Open Graph: thay "ten-tai-khoan" bằng tên tài khoản GitHub sau khi bật GitHub Pages -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="EduHub Web">
+    <meta property="og:title" content="Lịch sự kiện · EduHub Web">
+    <meta property="og:description" content="Lịch các sự kiện sắp tới của câu lạc bộ sinh viên Trường Đại học Đồng Tháp, học kỳ I năm học 2026–2027.">
+    <meta property="og:url" content="https://ten-tai-khoan.github.io/eduhub-web/events.html">
+    <meta property="og:image" content="https://ten-tai-khoan.github.io/eduhub-web/assets/og-image.png">
+    <meta property="og:locale" content="vi_VN">
+    <meta name="theme-color" content="#001D45">
+    <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+    <!-- Ch02: một tệp CSS duy nhất, main.css tự @import các lớp còn lại -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- type="module": được dùng import/export, tự chạy sau khi HTML đọc xong (như defer) -->
+    <script type="module" src="src/events-page.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#noi-dung">Bỏ qua, đến nội dung chính</a>
+
+    <header class="site-header">
+      <div class="container site-header__inner">
+        <a class="brand" href="index.html">
+          <img class="brand__logo" src="assets/logo.svg" alt="" width="48" height="48">
+          <span class="brand__name">Edu<span>Hub</span></span>
+        </a>
+        <nav class="site-nav" aria-label="Điều hướng chính">
+          <ul class="site-nav__list">
+          <li><a class="site-nav__link" href="index.html">Trang chủ</a></li>
+          <li><a class="site-nav__link" href="events.html" aria-current="page">Sự kiện</a></li>
+          <li><a class="site-nav__link" href="index.html#cau-lac-bo">Câu lạc bộ</a></li>
+          <li><a class="site-nav__link" href="register.html">Đăng ký thành viên</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="noi-dung" class="container page">
+      <h1>Lịch sự kiện</h1>
+      <p class="page__intro">Học kỳ I, năm học 2026–2027. Sự kiện có nhãn <strong>Sắp hết chỗ</strong> chỉ còn dưới 20% số chỗ — đăng ký sớm nhé.</p>
+
+      <!-- role="search": trình đọc màn hình biết đây là khu tìm kiếm.
+           Form vẫn có name=q, name=clubId: nếu JS lỗi, bấm Enter vẫn ra URL ?q=…&clubId=… -->
+      <form class="filters" role="search" action="events.html" method="get">
+        <p class="field">
+          <label for="search">Tìm theo tên sự kiện</label>
+          <input id="search" name="q" type="search" placeholder="Ví dụ: hiến máu, workshop…" autocomplete="off">
+        </p>
+        <p class="field">
+          <label for="club-filter">Câu lạc bộ</label>
+          <select id="club-filter" name="clubId">
+            <option value="">Tất cả câu lạc bộ</option>
+          </select>
+        </p>
+        <!-- Kết quả tự cập nhật khi gõ; nút này cho người dùng bàn phím và khi JS chưa chạy -->
+        <p class="filters__actions">
+          <button class="btn btn--primary" type="submit">Tìm</button>
+        </p>
+      </form>
+
+      <section aria-labelledby="danh-sach">
+        <div class="section__head">
+          <h2 id="danh-sach">Tất cả sự kiện</h2>
+          <!-- aria-live: đọc to "Tìm thấy 3 sự kiện" mỗi khi kết quả đổi -->
+          <p id="result-count" class="result-count" aria-live="polite"></p>
+        </div>
+        <!-- Card được tạo bằng JavaScript từ GET /api/events (src/events-page.js) -->
+        <div id="event-list" class="card-grid" aria-busy="true">
+          <noscript><p>Trang này cần bật JavaScript để tải danh sách sự kiện.</p></noscript>
+        </div>
+      </section>
+
+      <p class="cta section">
+        <span>Muốn tham gia? Đăng ký thành viên EduHub trước.</span>
+        <a class="btn btn--primary" href="register.html">Đăng ký thành viên</a>
+      </p>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container site-footer__inner">
+        <p>EduHub Web · Trường Đại học Đồng Tháp · 783 Phạm Hữu Lầu, Cao Lãnh, Đồng Tháp</p>
+        <p>Liên hệ: <a href="mailto:eduhub@dthu.edu.vn">eduhub@dthu.edu.vn</a></p>
+        <p><small>Bài thực hành môn IN4529 — Lập trình Front End.</small></p>
+      </div>
+    </footer>
+  </body>
+</html>

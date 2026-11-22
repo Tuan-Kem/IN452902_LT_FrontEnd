@@ -1,0 +1,13 @@
+/* ==========================================================================
+   main.css — tệp duy nhất mà HTML liên kết tới
+   @layer khai báo thứ tự ưu tiên: lớp viết SAU thắng lớp viết TRƯỚC,
+   bất kể specificity của selector. Nhờ vậy components luôn thắng base.
+   ========================================================================== */
+
+@layer tokens, base, layout, components;
+
+/* @import phải đứng đầu tệp (chỉ sau dòng @layer ở trên) */
+@import url("tokens.css") layer(tokens);
+@import url("base.css") layer(base);
+@import url("layout.css") layer(layout);
+@import url("components.css") layer(components);

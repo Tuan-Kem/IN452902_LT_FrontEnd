@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Đăng ký thành viên · EduHub Web</title>
+    <meta name="description" content="Đăng ký tài khoản thành viên EduHub Web dành cho sinh viên Trường Đại học Đồng Tháp.">
+    <!-- Open Graph: thay "ten-tai-khoan" bằng tên tài khoản GitHub sau khi bật GitHub Pages -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="EduHub Web">
+    <meta property="og:title" content="Đăng ký thành viên · EduHub Web">
+    <meta property="og:description" content="Đăng ký tài khoản thành viên EduHub Web dành cho sinh viên Trường Đại học Đồng Tháp.">
+    <meta property="og:url" content="https://ten-tai-khoan.github.io/eduhub-web/register.html">
+    <meta property="og:image" content="https://ten-tai-khoan.github.io/eduhub-web/assets/og-image.png">
+    <meta property="og:locale" content="vi_VN">
+    <meta name="theme-color" content="#001D45">
+    <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+    <!-- Ch02: một tệp CSS duy nhất, main.css tự @import các lớp còn lại -->
+    <link rel="stylesheet" href="css/main.css">
+    <script type="module" src="src/register-page.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#noi-dung">Bỏ qua, đến nội dung chính</a>
+
+    <header class="site-header">
+      <div class="container site-header__inner">
+        <a class="brand" href="index.html">
+          <img class="brand__logo" src="assets/logo.svg" alt="" width="48" height="48">
+          <span class="brand__name">Edu<span>Hub</span></span>
+        </a>
+        <nav class="site-nav" aria-label="Điều hướng chính">
+          <ul class="site-nav__list">
+          <li><a class="site-nav__link" href="index.html">Trang chủ</a></li>
+          <li><a class="site-nav__link" href="events.html">Sự kiện</a></li>
+          <li><a class="site-nav__link" href="index.html#cau-lac-bo">Câu lạc bộ</a></li>
+          <li><a class="site-nav__link" href="register.html" aria-current="page">Đăng ký thành viên</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="noi-dung" class="container page page--narrow">
+      <h1>Đăng ký thành viên</h1>
+      <p class="page__intro">Tạo tài khoản để đăng ký tham gia sự kiện. Ô có dấu <abbr title="bắt buộc">*</abbr> là bắt buộc.</p>
+
+      <!-- Thông báo chung sau khi gửi: thành công (xanh) hoặc lỗi (đỏ). JS điền nội dung. -->
+      <div id="form-alert" aria-live="polite"></div>
+
+      <!-- novalidate: tắt bong bóng báo lỗi mặc định của trình duyệt để JS tự hiện lỗi
+           ngay dưới từng ô, cùng một chỗ với lỗi server trả về (400). -->
+      <form id="register-form" class="form" novalidate>
+        <fieldset>
+          <legend>Thông tin tài khoản</legend>
+
+          <div class="form__grid">
+            <p class="field">
+              <label for="student-id">Mã số sinh viên <abbr title="bắt buộc">*</abbr></label>
+              <input id="student-id" name="studentId" type="text" inputmode="numeric"
+                     required pattern="[0-9]{10}" maxlength="10"
+                     aria-describedby="student-id-hint studentId-error" autocomplete="off">
+              <small id="student-id-hint">Gồm đúng 10 chữ số, ví dụ 0024410123.</small>
+              <small id="studentId-error" class="field__error" data-error-for="studentId"></small>
+            </p>
+
+            <p class="field">
+              <label for="full-name">Họ và tên <abbr title="bắt buộc">*</abbr></label>
+              <input id="full-name" name="name" type="text" required minlength="2" maxlength="100"
+                     autocomplete="name" aria-describedby="name-error">
+              <small id="name-error" class="field__error" data-error-for="name"></small>
+            </p>
+
+            <p class="field field--full">
+              <label for="email">Email <abbr title="bắt buộc">*</abbr></label>
+              <input id="email" name="email" type="email" required autocomplete="email"
+                     placeholder="mssv@sv.dthu.edu.vn" aria-describedby="email-error">
+              <small id="email-error" class="field__error" data-error-for="email"></small>
+            </p>
+
+            <p class="field">
+              <label for="password">Mật khẩu <abbr title="bắt buộc">*</abbr></label>
+              <input id="password" name="password" type="password" required minlength="8"
+                     autocomplete="new-password" aria-describedby="password-hint password-error">
+              <small id="password-hint">Ít nhất 8 ký tự.</small>
+              <small id="password-error" class="field__error" data-error-for="password"></small>
+            </p>
+
+            <p class="field">
+              <label for="password-confirm">Nhập lại mật khẩu <abbr title="bắt buộc">*</abbr></label>
+              <input id="password-confirm" name="passwordConfirm" type="password" required
+                     autocomplete="new-password" aria-describedby="passwordConfirm-error">
+              <small id="passwordConfirm-error" class="field__error" data-error-for="passwordConfirm"></small>
+            </p>
+          </div>
+        </fieldset>
+
+        <div class="field--check">
+          <input id="agree" name="agree" type="checkbox" required aria-describedby="agree-error">
+          <label for="agree">Tôi đồng ý với nội quy sinh hoạt câu lạc bộ <abbr title="bắt buộc">*</abbr></label>
+        </div>
+        <small id="agree-error" class="field__error" data-error-for="agree"></small>
+
+        <p class="btn-row">
+          <button class="btn btn--primary" type="submit">Tạo tài khoản</button>
+          <button class="btn btn--ghost" type="reset">Nhập lại</button>
+        </p>
+      </form>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container site-footer__inner">
+        <p>EduHub Web · Trường Đại học Đồng Tháp · 783 Phạm Hữu Lầu, Cao Lãnh, Đồng Tháp</p>
+        <p>Liên hệ: <a href="mailto:eduhub@dthu.edu.vn">eduhub@dthu.edu.vn</a></p>
+        <p><small>Bài thực hành môn IN4529 — Lập trình Front End.</small></p>
+      </div>
+    </footer>
+  </body>
+</html>

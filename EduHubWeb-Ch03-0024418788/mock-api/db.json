@@ -1,0 +1,689 @@
+{
+  "_ghiChu": "Seed mock API EduHub. Mật khẩu ở đây là văn bản thường để tiện demo; server băm bằng scrypt lúc nạp. Thời gian lưu theo UTC (giờ Việt Nam = UTC+7).",
+  "members": [
+    {
+      "id": "33333333-3333-4333-8333-000000000001",
+      "studentId": "CB0001",
+      "name": "Quản trị EduHub",
+      "email": "admin@dthu.edu.vn",
+      "password": "Admin@123",
+      "role": "Admin",
+      "joinedAt": "2026-08-01T01:00:00.000Z"
+    },
+    {
+      "id": "33333333-3333-4333-8333-000000000002",
+      "studentId": "0023410001",
+      "name": "Nguyễn Văn An",
+      "email": "sv1@dthu.edu.vn",
+      "password": "Member@123",
+      "role": "Member",
+      "joinedAt": "2026-08-20T01:00:00.000Z"
+    },
+    {
+      "id": "33333333-3333-4333-8333-000000000003",
+      "studentId": "0023410002",
+      "name": "Trần Thị Bích Ngọc",
+      "email": "sv2@dthu.edu.vn",
+      "password": "Member@123",
+      "role": "Member",
+      "joinedAt": "2026-08-20T01:00:00.000Z"
+    },
+    {
+      "id": "33333333-3333-4333-8333-000000000004",
+      "studentId": "0023410003",
+      "name": "Lê Minh Khoa",
+      "email": "sv3@dthu.edu.vn",
+      "password": "Member@123",
+      "role": "Member",
+      "joinedAt": "2026-08-21T01:00:00.000Z"
+    },
+    {
+      "id": "33333333-3333-4333-8333-000000000005",
+      "studentId": "0023410004",
+      "name": "Phạm Thị Thu Hà",
+      "email": "sv4@dthu.edu.vn",
+      "password": "Member@123",
+      "role": "Member",
+      "joinedAt": "2026-08-22T01:00:00.000Z"
+    },
+    {
+      "id": "33333333-3333-4333-8333-000000000006",
+      "studentId": "0023410005",
+      "name": "Huỳnh Quốc Bảo",
+      "email": "sv5@dthu.edu.vn",
+      "password": "Member@123",
+      "role": "Member",
+      "joinedAt": "2026-08-23T01:00:00.000Z"
+    },
+    {
+      "id": "33333333-3333-4333-8333-000000000007",
+      "studentId": "0023410006",
+      "name": "Võ Thị Mỹ Duyên",
+      "email": "sv6@dthu.edu.vn",
+      "password": "Member@123",
+      "role": "Member",
+      "joinedAt": "2026-08-25T01:00:00.000Z"
+    },
+    {
+      "id": "33333333-3333-4333-8333-000000000008",
+      "studentId": "0023410007",
+      "name": "Đặng Hoàng Phúc",
+      "email": "sv7@dthu.edu.vn",
+      "password": "Member@123",
+      "role": "Member",
+      "joinedAt": "2026-08-26T01:00:00.000Z"
+    },
+    {
+      "id": "33333333-3333-4333-8333-000000000009",
+      "studentId": "0023410008",
+      "name": "Nguyễn Thị Kim Thoa",
+      "email": "sv8@dthu.edu.vn",
+      "password": "Member@123",
+      "role": "Member",
+      "joinedAt": "2026-08-28T01:00:00.000Z"
+    }
+  ],
+  "clubs": [
+    {
+      "id": "11111111-1111-4111-8111-000000000001",
+      "name": "CLB Tin học",
+      "description": "Sân chơi học thuật của sinh viên yêu công nghệ: lập trình, thiết kế web, trí tuệ nhân tạo và các cuộc thi tin học.",
+      "presidentId": "33333333-3333-4333-8333-000000000004",
+      "createdAt": "2026-08-05T02:00:00.000Z"
+    },
+    {
+      "id": "11111111-1111-4111-8111-000000000002",
+      "name": "CLB Tình nguyện",
+      "description": "Kết nối sinh viên tham gia hoạt động vì cộng đồng: môi trường, hiến máu, tiếp sức mùa thi, Xuân yêu thương.",
+      "presidentId": "33333333-3333-4333-8333-000000000005",
+      "createdAt": "2026-08-05T02:00:00.000Z"
+    },
+    {
+      "id": "11111111-1111-4111-8111-000000000003",
+      "name": "CLB Tiếng Anh",
+      "description": "Môi trường luyện nói tiếng Anh mỗi tuần, chia sẻ kinh nghiệm thi IELTS/TOEIC và giao lưu văn hoá.",
+      "presidentId": null,
+      "createdAt": "2026-08-06T02:00:00.000Z"
+    },
+    {
+      "id": "11111111-1111-4111-8111-000000000004",
+      "name": "CLB Âm nhạc",
+      "description": "Nơi hội tụ các bạn yêu ca hát, nhạc cụ; tổ chức đêm nhạc và biểu diễn văn nghệ cho các sự kiện của Trường.",
+      "presidentId": "33333333-3333-4333-8333-000000000007",
+      "createdAt": "2026-08-06T02:00:00.000Z"
+    },
+    {
+      "id": "11111111-1111-4111-8111-000000000005",
+      "name": "CLB Bóng đá",
+      "description": "Tập luyện, giao hữu và tổ chức giải bóng đá sinh viên Trường Đại học Đồng Tháp.",
+      "presidentId": "33333333-3333-4333-8333-000000000008",
+      "createdAt": "2026-08-07T02:00:00.000Z"
+    },
+    {
+      "id": "11111111-1111-4111-8111-000000000006",
+      "name": "CLB Kỹ năng mềm",
+      "description": "Rèn kỹ năng giao tiếp, thuyết trình, làm việc nhóm và chuẩn bị hành trang nghề nghiệp cho sinh viên.",
+      "presidentId": null,
+      "createdAt": "2026-08-08T02:00:00.000Z"
+    }
+  ],
+  "events": [
+    {
+      "id": "22222222-2222-4222-8222-000000000001",
+      "name": "Workshop Git & GitHub cho tân sinh viên",
+      "description": "Hướng dẫn tạo tài khoản GitHub, commit, push và đăng trang web đầu tiên lên GitHub Pages. Mang theo laptop.",
+      "clubId": "11111111-1111-4111-8111-000000000001",
+      "location": "Phòng máy A3.201",
+      "startTime": "2026-09-12T01:00:00.000Z",
+      "capacity": 40,
+      "createdAt": "2026-08-15T03:00:00.000Z"
+    },
+    {
+      "id": "22222222-2222-4222-8222-000000000002",
+      "name": "Cuộc thi Lập trình DThU Code War 2026",
+      "description": "Thi giải thuật theo đội 3 người trong 4 giờ. Giải nhất 3.000.000 đồng và cúp lưu niệm.",
+      "clubId": "11111111-1111-4111-8111-000000000001",
+      "location": "Phòng máy A3 (tầng 2)",
+      "startTime": "2026-10-17T00:30:00.000Z",
+      "capacity": 60,
+      "createdAt": "2026-08-15T03:00:00.000Z"
+    },
+    {
+      "id": "22222222-2222-4222-8222-000000000003",
+      "name": "Hội thảo AI trong học tập: dùng đúng, dùng đủ",
+      "description": "Chia sẻ cách dùng trợ lý AI để học lập trình hiệu quả mà không phụ thuộc, kèm phần hỏi đáp với giảng viên.",
+      "clubId": "11111111-1111-4111-8111-000000000001",
+      "location": "Hội trường A, Trường Đại học Đồng Tháp",
+      "startTime": "2026-11-14T07:00:00.000Z",
+      "capacity": 150,
+      "createdAt": "2026-08-15T03:00:00.000Z"
+    },
+    {
+      "id": "22222222-2222-4222-8222-000000000004",
+      "name": "Hackathon EduHub 24 giờ",
+      "description": "Xây dựng ứng dụng phục vụ sinh viên trong 24 giờ. Số chỗ giới hạn do phòng máy nhỏ.",
+      "clubId": "11111111-1111-4111-8111-000000000001",
+      "location": "Phòng máy A3.205",
+      "startTime": "2026-12-19T01:00:00.000Z",
+      "capacity": 5,
+      "createdAt": "2026-08-15T03:00:00.000Z"
+    },
+    {
+      "id": "22222222-2222-4222-8222-000000000005",
+      "name": "Ngày Chủ nhật xanh: dọn rác bờ sông Tiền",
+      "description": "Thu gom rác thải nhựa dọc bờ kè, phân loại và tuyên truyền bảo vệ môi trường. Ban tổ chức chuẩn bị găng tay, nước uống.",
+      "clubId": "11111111-1111-4111-8111-000000000002",
+      "location": "Bờ kè sông Tiền, phường Cao Lãnh",
+      "startTime": "2026-09-19T23:30:00.000Z",
+      "capacity": 80,
+      "createdAt": "2026-08-15T03:00:00.000Z"
+    },
+    {
+      "id": "22222222-2222-4222-8222-000000000006",
+      "name": "Hiến máu nhân đạo đợt 1 năm học 2026–2027",
+      "description": "Phối hợp Hội Chữ thập đỏ tỉnh tổ chức hiến máu. Ăn sáng nhẹ, mang theo CCCD.",
+      "clubId": "11111111-1111-4111-8111-000000000002",
+      "location": "Nhà thi đấu đa năng",
+      "startTime": "2026-10-25T00:00:00.000Z",
+      "capacity": 200,
+      "createdAt": "2026-08-15T03:00:00.000Z"
+    },
+    {
+      "id": "22222222-2222-4222-8222-000000000007",
+      "name": "Tiếp sức mùa thi: hướng dẫn học sinh ôn tập",
+      "description": "Sinh viên tình nguyện kèm học sinh lớp 12 ôn tập Toán, Văn, Tiếng Anh vào cuối tuần.",
+      "clubId": "11111111-1111-4111-8111-000000000002",
+      "location": "Giảng đường B1.105",
+      "startTime": "2026-12-06T01:00:00.000Z",
+      "capacity": 30,
+      "createdAt": "2026-08-15T03:00:00.000Z"
+    },
+    {
+      "id": "22222222-2222-4222-8222-000000000008",
+      "name": "Xuân yêu thương: tặng quà Tết cho trẻ em vùng sâu",
+      "description": "Gói quà Tết và trao tận tay cho trẻ em khó khăn ở huyện Tháp Mười. Có xe đưa đón.",
+      "clubId": "11111111-1111-4111-8111-000000000002",
+      "location": "Tập trung tại cổng chính Trường",
+      "startTime": "2027-01-22T23:00:00.000Z",
+      "capacity": 6,
+      "createdAt": "2026-08-15T03:00:00.000Z"
+    },
+    {
+      "id": "22222222-2222-4222-8222-000000000009",
+      "name": "English Speaking Club: Giới thiệu bản thân",
+      "description": "Buổi sinh hoạt đầu năm: luyện giới thiệu bản thân và kết bạn bằng tiếng Anh qua trò chơi.",
+      "clubId": "11111111-1111-4111-8111-000000000003",
+      "location": "Thư viện, phòng sinh hoạt nhóm 2",
+      "startTime": "2026-09-26T08:00:00.000Z",
+      "capacity": 35,
+      "createdAt": "2026-08-15T03:00:00.000Z"
+    },
+    {
+      "id": "22222222-2222-4222-8222-000000000010",
+      "name": "Halloween English Night",
+      "description": "Hoá trang, kể chuyện ma bằng tiếng Anh và thi trang phục đẹp. Chỗ ngồi rất giới hạn.",
+      "clubId": "11111111-1111-4111-8111-000000000003",
+      "location": "Phòng sinh hoạt CLB, nhà C",
+      "startTime": "2026-10-31T11:30:00.000Z",
+      "capacity": 4,
+      "createdAt": "2026-08-15T03:00:00.000Z"
+    },
+    {
+      "id": "22222222-2222-4222-8222-000000000011",
+      "name": "Luyện thi IELTS Speaking cùng cựu sinh viên",
+      "description": "Cựu sinh viên đạt IELTS 7.5 chia sẻ lộ trình và chấm thử phần Speaking.",
+      "clubId": "11111111-1111-4111-8111-000000000003",
+      "location": "Giảng đường B2.201",
+      "startTime": "2026-11-28T01:00:00.000Z",
+      "capacity": 50,
+      "createdAt": "2026-08-15T03:00:00.000Z"
+    },
+    {
+      "id": "22222222-2222-4222-8222-000000000012",
+      "name": "Debate Contest: Mạng xã hội và người trẻ",
+      "description": "Tranh biện tiếng Anh theo đội 3 người. Đăng ký trước để được xếp đội.",
+      "clubId": "11111111-1111-4111-8111-000000000003",
+      "location": "Hội trường A, Trường Đại học Đồng Tháp",
+      "startTime": "2027-01-09T06:30:00.000Z",
+      "capacity": 40,
+      "createdAt": "2026-08-15T03:00:00.000Z"
+    },
+    {
+      "id": "22222222-2222-4222-8222-000000000013",
+      "name": "Đêm nhạc chào tân sinh viên K26",
+      "description": "Đêm nhạc mở màn năm học với các tiết mục của sinh viên và khách mời.",
+      "clubId": "11111111-1111-4111-8111-000000000004",
+      "location": "Sân khấu ngoài trời, khu trung tâm",
+      "startTime": "2026-09-05T12:00:00.000Z",
+      "capacity": 300,
+      "createdAt": "2026-08-15T03:00:00.000Z"
+    },
+    {
+      "id": "22222222-2222-4222-8222-000000000014",
+      "name": "Văn nghệ chào mừng Ngày Nhà giáo Việt Nam 20/11",
+      "description": "Chương trình văn nghệ tri ân thầy cô với hợp xướng, múa và tiểu phẩm.",
+      "clubId": "11111111-1111-4111-8111-000000000004",
+      "location": "Hội trường A, Trường Đại học Đồng Tháp",
+      "startTime": "2026-11-20T12:00:00.000Z",
+      "capacity": 250,
+      "createdAt": "2026-08-15T03:00:00.000Z"
+    },
+    {
+      "id": "22222222-2222-4222-8222-000000000015",
+      "name": "Đêm nhạc Giáng sinh acoustic",
+      "description": "Đêm nhạc mộc ấm cúng với guitar và cajon. Không gian nhỏ, chỉ nhận ít khán giả.",
+      "clubId": "11111111-1111-4111-8111-000000000004",
+      "location": "Quán cà phê sách, Thư viện",
+      "startTime": "2026-12-24T12:30:00.000Z",
+      "capacity": 8,
+      "createdAt": "2026-08-15T03:00:00.000Z"
+    },
+    {
+      "id": "22222222-2222-4222-8222-000000000016",
+      "name": "Tuyển thành viên ban nhạc học kỳ II",
+      "description": "Thử giọng và thử nhạc cụ (guitar, keyboard, trống) để tham gia ban nhạc của CLB.",
+      "clubId": "11111111-1111-4111-8111-000000000004",
+      "location": "Phòng nhạc, nhà C",
+      "startTime": "2027-01-16T07:00:00.000Z",
+      "capacity": 25,
+      "createdAt": "2026-08-15T03:00:00.000Z"
+    },
+    {
+      "id": "22222222-2222-4222-8222-000000000017",
+      "name": "Giao hữu bóng đá Khoa CN&KT – Khoa Kinh tế",
+      "description": "Trận giao hữu sân 7 người, chào đón tân sinh viên. Cổ động viên được tặng áo.",
+      "clubId": "11111111-1111-4111-8111-000000000005",
+      "location": "Sân bóng đá Trường ĐH Đồng Tháp",
+      "startTime": "2026-09-19T09:00:00.000Z",
+      "capacity": 40,
+      "createdAt": "2026-08-15T03:00:00.000Z"
+    },
+    {
+      "id": "22222222-2222-4222-8222-000000000018",
+      "name": "Khai mạc Giải bóng đá sinh viên DThU Cup 2026",
+      "description": "Lễ khai mạc và trận đấu mở màn giữa đương kim vô địch và đội khách mời.",
+      "clubId": "11111111-1111-4111-8111-000000000005",
+      "location": "Sân bóng đá Trường ĐH Đồng Tháp",
+      "startTime": "2026-10-10T08:30:00.000Z",
+      "capacity": 500,
+      "createdAt": "2026-08-15T03:00:00.000Z"
+    },
+    {
+      "id": "22222222-2222-4222-8222-000000000019",
+      "name": "Tập huấn trọng tài bóng đá phong trào",
+      "description": "Luật bóng đá sân 7, cách bắt việt vị và xử lý tình huống. Cấp giấy chứng nhận.",
+      "clubId": "11111111-1111-4111-8111-000000000005",
+      "location": "Giảng đường B1.201",
+      "startTime": "2026-11-07T01:00:00.000Z",
+      "capacity": 20,
+      "createdAt": "2026-08-15T03:00:00.000Z"
+    },
+    {
+      "id": "22222222-2222-4222-8222-000000000020",
+      "name": "Chung kết DThU Cup 2026",
+      "description": "Trận chung kết và lễ trao giải Giải bóng đá sinh viên DThU Cup 2026.",
+      "clubId": "11111111-1111-4111-8111-000000000005",
+      "location": "Sân bóng đá Trường ĐH Đồng Tháp",
+      "startTime": "2026-12-12T08:00:00.000Z",
+      "capacity": 500,
+      "createdAt": "2026-08-15T03:00:00.000Z"
+    },
+    {
+      "id": "22222222-2222-4222-8222-000000000021",
+      "name": "Kỹ năng quản lý thời gian cho sinh viên năm nhất",
+      "description": "Cách lập thời khoá biểu cá nhân, chia nhỏ mục tiêu và tránh trì hoãn.",
+      "clubId": "11111111-1111-4111-8111-000000000006",
+      "location": "Giảng đường B2.101",
+      "startTime": "2026-09-29T11:00:00.000Z",
+      "capacity": 60,
+      "createdAt": "2026-08-15T03:00:00.000Z"
+    },
+    {
+      "id": "22222222-2222-4222-8222-000000000022",
+      "name": "Viết CV và phỏng vấn xin việc",
+      "description": "Chuyên viên tuyển dụng sửa CV trực tiếp và phỏng vấn thử. Nhận ít người để sửa kỹ từng CV.",
+      "clubId": "11111111-1111-4111-8111-000000000006",
+      "location": "Phòng họp Khoa CN&KT",
+      "startTime": "2026-10-21T07:00:00.000Z",
+      "capacity": 5,
+      "createdAt": "2026-08-15T03:00:00.000Z"
+    },
+    {
+      "id": "22222222-2222-4222-8222-000000000023",
+      "name": "Thuyết trình tự tin trước đám đông",
+      "description": "Kỹ thuật mở đầu, dùng giọng nói, ánh mắt và xử lý câu hỏi khó. Có phần thực hành 2 phút.",
+      "clubId": "11111111-1111-4111-8111-000000000006",
+      "location": "Giảng đường B2.101",
+      "startTime": "2026-11-25T11:00:00.000Z",
+      "capacity": 45,
+      "createdAt": "2026-08-15T03:00:00.000Z"
+    },
+    {
+      "id": "22222222-2222-4222-8222-000000000024",
+      "name": "Làm việc nhóm hiệu quả qua trò chơi",
+      "description": "Chuỗi trò chơi vận động rèn khả năng phối hợp, phân vai và giao tiếp trong nhóm.",
+      "clubId": "11111111-1111-4111-8111-000000000006",
+      "location": "Sân trường khu B",
+      "startTime": "2027-01-06T00:30:00.000Z",
+      "capacity": 30,
+      "createdAt": "2026-08-15T03:00:00.000Z"
+    }
+  ],
+  "registrations": [
+    {
+      "id": "44444444-4444-4444-8444-000000000001",
+      "memberId": "33333333-3333-4333-8333-000000000003",
+      "eventId": "22222222-2222-4222-8222-000000000004",
+      "registeredAt": "2026-09-30T13:00:00.000Z",
+      "status": "Confirmed",
+      "qrToken": null,
+      "checkedInAt": null
+    },
+    {
+      "id": "44444444-4444-4444-8444-000000000002",
+      "memberId": "33333333-3333-4333-8333-000000000004",
+      "eventId": "22222222-2222-4222-8222-000000000004",
+      "registeredAt": "2026-09-30T13:00:00.000Z",
+      "status": "Confirmed",
+      "qrToken": null,
+      "checkedInAt": null
+    },
+    {
+      "id": "44444444-4444-4444-8444-000000000003",
+      "memberId": "33333333-3333-4333-8333-000000000005",
+      "eventId": "22222222-2222-4222-8222-000000000004",
+      "registeredAt": "2026-09-30T13:00:00.000Z",
+      "status": "Pending",
+      "qrToken": null,
+      "checkedInAt": null
+    },
+    {
+      "id": "44444444-4444-4444-8444-000000000004",
+      "memberId": "33333333-3333-4333-8333-000000000006",
+      "eventId": "22222222-2222-4222-8222-000000000004",
+      "registeredAt": "2026-09-30T13:00:00.000Z",
+      "status": "Pending",
+      "qrToken": null,
+      "checkedInAt": null
+    },
+    {
+      "id": "44444444-4444-4444-8444-000000000005",
+      "memberId": "33333333-3333-4333-8333-000000000007",
+      "eventId": "22222222-2222-4222-8222-000000000004",
+      "registeredAt": "2026-09-30T13:00:00.000Z",
+      "status": "Pending",
+      "qrToken": null,
+      "checkedInAt": null
+    },
+    {
+      "id": "44444444-4444-4444-8444-000000000006",
+      "memberId": "33333333-3333-4333-8333-000000000003",
+      "eventId": "22222222-2222-4222-8222-000000000010",
+      "registeredAt": "2026-10-01T13:00:00.000Z",
+      "status": "Confirmed",
+      "qrToken": null,
+      "checkedInAt": null
+    },
+    {
+      "id": "44444444-4444-4444-8444-000000000007",
+      "memberId": "33333333-3333-4333-8333-000000000004",
+      "eventId": "22222222-2222-4222-8222-000000000010",
+      "registeredAt": "2026-10-01T13:00:00.000Z",
+      "status": "Confirmed",
+      "qrToken": null,
+      "checkedInAt": null
+    },
+    {
+      "id": "44444444-4444-4444-8444-000000000008",
+      "memberId": "33333333-3333-4333-8333-000000000008",
+      "eventId": "22222222-2222-4222-8222-000000000010",
+      "registeredAt": "2026-10-01T13:00:00.000Z",
+      "status": "Confirmed",
+      "qrToken": null,
+      "checkedInAt": null
+    },
+    {
+      "id": "44444444-4444-4444-8444-000000000009",
+      "memberId": "33333333-3333-4333-8333-000000000009",
+      "eventId": "22222222-2222-4222-8222-000000000010",
+      "registeredAt": "2026-10-01T13:00:00.000Z",
+      "status": "Confirmed",
+      "qrToken": null,
+      "checkedInAt": null
+    },
+    {
+      "id": "44444444-4444-4444-8444-000000000010",
+      "memberId": "33333333-3333-4333-8333-000000000003",
+      "eventId": "22222222-2222-4222-8222-000000000008",
+      "registeredAt": "2026-10-02T13:00:00.000Z",
+      "status": "Pending",
+      "qrToken": null,
+      "checkedInAt": null
+    },
+    {
+      "id": "44444444-4444-4444-8444-000000000011",
+      "memberId": "33333333-3333-4333-8333-000000000004",
+      "eventId": "22222222-2222-4222-8222-000000000008",
+      "registeredAt": "2026-10-02T13:00:00.000Z",
+      "status": "Pending",
+      "qrToken": null,
+      "checkedInAt": null
+    },
+    {
+      "id": "44444444-4444-4444-8444-000000000012",
+      "memberId": "33333333-3333-4333-8333-000000000005",
+      "eventId": "22222222-2222-4222-8222-000000000008",
+      "registeredAt": "2026-10-02T13:00:00.000Z",
+      "status": "Pending",
+      "qrToken": null,
+      "checkedInAt": null
+    },
+    {
+      "id": "44444444-4444-4444-8444-000000000013",
+      "memberId": "33333333-3333-4333-8333-000000000006",
+      "eventId": "22222222-2222-4222-8222-000000000008",
+      "registeredAt": "2026-10-02T13:00:00.000Z",
+      "status": "Pending",
+      "qrToken": null,
+      "checkedInAt": null
+    },
+    {
+      "id": "44444444-4444-4444-8444-000000000014",
+      "memberId": "33333333-3333-4333-8333-000000000007",
+      "eventId": "22222222-2222-4222-8222-000000000008",
+      "registeredAt": "2026-10-02T13:00:00.000Z",
+      "status": "Pending",
+      "qrToken": null,
+      "checkedInAt": null
+    },
+    {
+      "id": "44444444-4444-4444-8444-000000000015",
+      "memberId": "33333333-3333-4333-8333-000000000003",
+      "eventId": "22222222-2222-4222-8222-000000000015",
+      "registeredAt": "2026-10-03T13:00:00.000Z",
+      "status": "Pending",
+      "qrToken": null,
+      "checkedInAt": null
+    },
+    {
+      "id": "44444444-4444-4444-8444-000000000016",
+      "memberId": "33333333-3333-4333-8333-000000000004",
+      "eventId": "22222222-2222-4222-8222-000000000015",
+      "registeredAt": "2026-10-03T13:00:00.000Z",
+      "status": "Pending",
+      "qrToken": null,
+      "checkedInAt": null
+    },
+    {
+      "id": "44444444-4444-4444-8444-000000000017",
+      "memberId": "33333333-3333-4333-8333-000000000005",
+      "eventId": "22222222-2222-4222-8222-000000000015",
+      "registeredAt": "2026-10-03T13:00:00.000Z",
+      "status": "Pending",
+      "qrToken": null,
+      "checkedInAt": null
+    },
+    {
+      "id": "44444444-4444-4444-8444-000000000018",
+      "memberId": "33333333-3333-4333-8333-000000000006",
+      "eventId": "22222222-2222-4222-8222-000000000015",
+      "registeredAt": "2026-10-03T13:00:00.000Z",
+      "status": "Pending",
+      "qrToken": null,
+      "checkedInAt": null
+    },
+    {
+      "id": "44444444-4444-4444-8444-000000000019",
+      "memberId": "33333333-3333-4333-8333-000000000007",
+      "eventId": "22222222-2222-4222-8222-000000000015",
+      "registeredAt": "2026-10-03T13:00:00.000Z",
+      "status": "Pending",
+      "qrToken": null,
+      "checkedInAt": null
+    },
+    {
+      "id": "44444444-4444-4444-8444-000000000020",
+      "memberId": "33333333-3333-4333-8333-000000000008",
+      "eventId": "22222222-2222-4222-8222-000000000015",
+      "registeredAt": "2026-10-03T13:00:00.000Z",
+      "status": "Pending",
+      "qrToken": null,
+      "checkedInAt": null
+    },
+    {
+      "id": "44444444-4444-4444-8444-000000000021",
+      "memberId": "33333333-3333-4333-8333-000000000009",
+      "eventId": "22222222-2222-4222-8222-000000000015",
+      "registeredAt": "2026-10-03T13:00:00.000Z",
+      "status": "Pending",
+      "qrToken": null,
+      "checkedInAt": null
+    },
+    {
+      "id": "44444444-4444-4444-8444-000000000022",
+      "memberId": "33333333-3333-4333-8333-000000000002",
+      "eventId": "22222222-2222-4222-8222-000000000022",
+      "registeredAt": "2026-09-28T13:00:00.000Z",
+      "status": "Pending",
+      "qrToken": null,
+      "checkedInAt": null
+    },
+    {
+      "id": "44444444-4444-4444-8444-000000000023",
+      "memberId": "33333333-3333-4333-8333-000000000003",
+      "eventId": "22222222-2222-4222-8222-000000000022",
+      "registeredAt": "2026-09-28T13:00:00.000Z",
+      "status": "Confirmed",
+      "qrToken": null,
+      "checkedInAt": null
+    },
+    {
+      "id": "44444444-4444-4444-8444-000000000024",
+      "memberId": "33333333-3333-4333-8333-000000000004",
+      "eventId": "22222222-2222-4222-8222-000000000022",
+      "registeredAt": "2026-09-28T13:00:00.000Z",
+      "status": "Confirmed",
+      "qrToken": null,
+      "checkedInAt": null
+    },
+    {
+      "id": "44444444-4444-4444-8444-000000000025",
+      "memberId": "33333333-3333-4333-8333-000000000005",
+      "eventId": "22222222-2222-4222-8222-000000000022",
+      "registeredAt": "2026-09-28T13:00:00.000Z",
+      "status": "Confirmed",
+      "qrToken": null,
+      "checkedInAt": null
+    },
+    {
+      "id": "44444444-4444-4444-8444-000000000026",
+      "memberId": "33333333-3333-4333-8333-000000000002",
+      "eventId": "22222222-2222-4222-8222-000000000005",
+      "registeredAt": "2026-09-10T13:00:00.000Z",
+      "status": "Confirmed",
+      "qrToken": "26a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3",
+      "checkedInAt": "2026-09-19T23:20:00.000Z"
+    },
+    {
+      "id": "44444444-4444-4444-8444-000000000027",
+      "memberId": "33333333-3333-4333-8333-000000000002",
+      "eventId": "22222222-2222-4222-8222-000000000009",
+      "registeredAt": "2026-09-15T13:00:00.000Z",
+      "status": "Confirmed",
+      "qrToken": "27a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3",
+      "checkedInAt": "2026-09-26T07:50:00.000Z"
+    },
+    {
+      "id": "44444444-4444-4444-8444-000000000028",
+      "memberId": "33333333-3333-4333-8333-000000000002",
+      "eventId": "22222222-2222-4222-8222-000000000006",
+      "registeredAt": "2026-09-25T13:00:00.000Z",
+      "status": "Confirmed",
+      "qrToken": "28a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3",
+      "checkedInAt": null
+    },
+    {
+      "id": "44444444-4444-4444-8444-000000000029",
+      "memberId": "33333333-3333-4333-8333-000000000002",
+      "eventId": "22222222-2222-4222-8222-000000000003",
+      "registeredAt": "2026-10-01T13:00:00.000Z",
+      "status": "Pending",
+      "qrToken": null,
+      "checkedInAt": null
+    },
+    {
+      "id": "44444444-4444-4444-8444-000000000030",
+      "memberId": "33333333-3333-4333-8333-000000000002",
+      "eventId": "22222222-2222-4222-8222-000000000018",
+      "registeredAt": "2026-09-22T13:00:00.000Z",
+      "status": "Cancelled",
+      "qrToken": null,
+      "checkedInAt": null
+    },
+    {
+      "id": "44444444-4444-4444-8444-000000000031",
+      "memberId": "33333333-3333-4333-8333-000000000003",
+      "eventId": "22222222-2222-4222-8222-000000000013",
+      "registeredAt": "2026-09-01T13:00:00.000Z",
+      "status": "Confirmed",
+      "qrToken": "31a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3",
+      "checkedInAt": "2026-09-05T11:50:00.000Z"
+    },
+    {
+      "id": "44444444-4444-4444-8444-000000000032",
+      "memberId": "33333333-3333-4333-8333-000000000004",
+      "eventId": "22222222-2222-4222-8222-000000000013",
+      "registeredAt": "2026-09-01T13:00:00.000Z",
+      "status": "Confirmed",
+      "qrToken": "32a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3",
+      "checkedInAt": "2026-09-05T11:50:00.000Z"
+    },
+    {
+      "id": "44444444-4444-4444-8444-000000000033",
+      "memberId": "33333333-3333-4333-8333-000000000005",
+      "eventId": "22222222-2222-4222-8222-000000000001",
+      "registeredAt": "2026-09-05T13:00:00.000Z",
+      "status": "Confirmed",
+      "qrToken": "33a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3",
+      "checkedInAt": "2026-09-12T00:50:00.000Z"
+    },
+    {
+      "id": "44444444-4444-4444-8444-000000000034",
+      "memberId": "33333333-3333-4333-8333-000000000008",
+      "eventId": "22222222-2222-4222-8222-000000000017",
+      "registeredAt": "2026-09-12T13:00:00.000Z",
+      "status": "Confirmed",
+      "qrToken": "34a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3",
+      "checkedInAt": "2026-09-19T08:50:00.000Z"
+    },
+    {
+      "id": "44444444-4444-4444-8444-000000000035",
+      "memberId": "33333333-3333-4333-8333-000000000009",
+      "eventId": "22222222-2222-4222-8222-000000000021",
+      "registeredAt": "2026-09-24T13:00:00.000Z",
+      "status": "Pending",
+      "qrToken": null,
+      "checkedInAt": null
+    }
+  ]
+}

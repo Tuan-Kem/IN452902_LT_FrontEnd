@@ -1,0 +1,15 @@
+{
+  "name": "eduhub-mock-api",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Mock API EduHub cho môn IN4529 Lập trình Front End — chỉ dùng module có sẵn của Node",
+  "type": "module",
+  "main": "server.mjs",
+  "scripts": {
+    "start": "node server.mjs",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
